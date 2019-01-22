@@ -50,7 +50,8 @@ for line in passwordList:
 	passwordList.truncate()
 	passwordList.writelines(passwordListCopy)
 	passwordList.seek(0)
-
+	
+	# Sleep to force ten minute wait between attempts
 	elapsedTime = datetime.datetime.now() - startTime
 	secondsToSleepFor = 600 - elapsedTime.seconds
 	print("Time taken to check usernames: " + str(elapsedTime.seconds) + ". Sleeping for " + str(secondsToSleepFor))
